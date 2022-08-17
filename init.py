@@ -35,7 +35,7 @@ def auto_config():
 
 
 def init(cwd: str = ""):
-    cwd = cwd or str(Path(os.getcwd()) / "data")
+    cwd = cwd or str(Path(os.getcwd()))
     os.environ.setdefault("EVOXBENCH_DATA", str(cwd))
     sys.path.append(cwd)
     os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
