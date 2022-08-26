@@ -10,11 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import logging.handlers
-import os
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+MEDIA_URL = '/images/'
 
 LOGGING = None
 LOGGING_CONFIG = None
@@ -28,7 +30,8 @@ SECRET_KEY = 'django-insecure-rz7_ah$+638!cm7bshjq)tu&)izufg6qhj^*0ge1y@=5+6u!sf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', ]
+ALLOWED_HOSTS = ['*',]
+
 
 # Application definition
 
@@ -46,7 +49,11 @@ INSTALLED_APPS = [
     "darts",
     "natsbenchsss",
     "mobilenetv3",
-    "resnet50"
+    "resnet50",
+    "nasbenchmacro",
+    "nasbenchasr",
+    'nasbenchgraph',
+    'nashpobench2',
 ]
 
 MIDDLEWARE = [
@@ -80,15 +87,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ORM.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': Path(os.environ.get("EVOXBENCH_DATA") or str(BASE_DIR)) / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'origin': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': '/home/satan/Downloads/database/db.sqlite3',
+    # }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -108,6 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -120,6 +134,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
