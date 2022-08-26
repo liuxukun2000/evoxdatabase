@@ -2,7 +2,7 @@
 
 ## Usage
 
-Download `db.sqlite3` from Google Drive: 
+Download `db.sqlite3` from Google Drive: https://drive.google.com/file/d/1JYzA614WdWHvUzBrlpSnvto0V8l8HVm1/view?usp=sharing
 
 Unzip it into this folder.
 
