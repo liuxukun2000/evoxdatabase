@@ -4,7 +4,7 @@
 
 Download `db.sqlite3` from Google Drive: https://drive.google.com/file/d/1JYzA614WdWHvUzBrlpSnvto0V8l8HVm1/view?usp=sharing
 
-Unzip it into this folder.
+Unzip it into this folder and rename it to `db.sqlite3`.
 
 
 ### Example 1 (filter)
